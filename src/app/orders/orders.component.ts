@@ -14,14 +14,12 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
   }
 
-  addCoffee() {
-    coffee => this.coffeeOrder.push(coffee);}
-  
-  removeCoffee() {
-    coffee => {
+ addCoffee = coffee => this.coffeeOrder.push(coffee);
+ 
+ removeCoffee = coffee => {
     let index = this.coffeeOrder.indexOf(coffee);
-    if (index > -1) this.coffeeOrder.splice(index, 1);}
-  }
+    if (index > -1) this.coffeeOrder.splice(index, 1);
+  };
     
   onSubmit() {
     this.ordersService.form.value.coffeeOrder = this.coffeeOrder;

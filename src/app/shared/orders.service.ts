@@ -11,7 +11,7 @@ export class OrdersService {
     })
 
     createCoffeeOrder(data) {
-        return new Promise<any>((reject) =>{
+        return new Promise<any>((resolve, reject) =>{
             this.firestore
                 .collection("coffeeOrders")
                 .add(data)
